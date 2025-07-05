@@ -1,0 +1,520 @@
+.survey-page {
+  padding: var(--spacing-lg) 0;
+  width: 100vw;
+  min-width: 0;
+  overflow-x: hidden;
+  background: var(--background-light);
+}
+
+.survey-container {
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0;
+  padding-left: clamp(1rem, 4vw, 3rem);
+  padding-right: clamp(1rem, 4vw, 3rem);
+}
+
+/* Survey Header */
+.survey-header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+  padding: var(--spacing-xl);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  color: white;
+  border-radius: var(--radius-lg);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: white;
+  text-decoration: none;
+  font-size: 0.875rem;
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.back-link:hover {
+  opacity: 1;
+}
+
+.survey-header h1 {
+  margin-bottom: var(--spacing-md);
+  color: white;
+  font-size: 2.5rem;
+}
+
+.survey-header p {
+  font-size: 1.125rem;
+  color: #fff;
+  opacity: 1;
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Progress Bar */
+.survey-progress {
+  margin-bottom: var(--spacing-xl);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: var(--background-light);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-bottom: var(--spacing-sm);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-color) 0%, var(--primary-color) 100%);
+  border-radius: var(--radius-full);
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Question Card */
+.question-card {
+  background-color: var(--background-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-light);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.question-header {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  align-items: flex-start;
+}
+
+.question-icon {
+  font-size: 3rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.question-content h2 {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+.question-content p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Question Types */
+.question-body {
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Rating Questions */
+.rating-question {
+  text-align: center;
+}
+
+.rating-stars {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.star-btn {
+  background: none;
+  border: none;
+  color: var(--border-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: var(--spacing-xs);
+  border-radius: var(--radius-md);
+}
+
+.star-btn:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+.star-btn.active {
+  color: var(--accent-color);
+}
+
+.rating-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-light);
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* Yes/No Questions */
+.yesno-question {
+  display: flex;
+  gap: var(--spacing-lg);
+  justify-content: center;
+}
+
+.yesno-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-lg);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background-color: var(--background-white);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  font-weight: 500;
+  min-width: 200px;
+  justify-content: center;
+}
+
+.yesno-btn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-light);
+}
+
+.yesno-btn.active {
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* Text Questions */
+.text-question textarea {
+  width: 100%;
+  padding: var(--spacing-md);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 120px;
+  transition: border-color 0.2s ease;
+}
+
+.text-question textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.text-question textarea::placeholder {
+  color: var(--text-light);
+}
+
+/* Multiple Choice Questions */
+.multiple-question {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.checkbox-option {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: var(--background-white);
+}
+
+.checkbox-option:hover {
+  border-color: var(--primary-color);
+  background-color: var(--background-light);
+}
+
+.checkbox-option input[type="checkbox"] {
+  display: none;
+}
+
+.checkmark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  position: relative;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.checkbox-option input[type="checkbox"]:checked + .checkmark {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.checkbox-option input[type="checkbox"]:checked + .checkmark::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Question Navigation */
+.question-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+}
+
+.step-indicators {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.step-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--border-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.step-dot.active {
+  background-color: var(--primary-color);
+  transform: scale(1.2);
+}
+
+.step-dot.completed {
+  background-color: var(--accent-color);
+}
+
+/* Survey Benefits */
+.survey-benefits {
+  background-color: var(--background-light);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.survey-benefits h3 {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-primary);
+  font-size: 1.5rem;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.benefit-item {
+  text-align: center;
+  padding: var(--spacing-lg);
+  background-color: var(--background-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-light);
+}
+
+.benefit-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.benefit-item h4 {
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
+  font-size: 1.125rem;
+}
+
+.benefit-item p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Survey Complete */
+.survey-complete {
+  text-align: center;
+  padding: var(--spacing-2xl);
+  background-color: var(--background-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-light);
+}
+
+.complete-icon {
+  margin-bottom: var(--spacing-lg);
+  color: var(--accent-color);
+}
+
+.survey-complete h1 {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-primary);
+  font-size: 2.5rem;
+}
+
+.survey-complete p {
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.complete-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.feedback-preview {
+  background-color: var(--background-light);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  text-align: left;
+}
+
+.feedback-preview h3 {
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.feedback-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+}
+
+.summary-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.summary-item span:last-child {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .survey-container {
+    padding: 0 var(--spacing-md);
+  }
+  
+  .survey-header h1 {
+    font-size: 2rem;
+  }
+  
+  .question-header {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-md);
+  }
+  
+  .question-icon {
+    font-size: 2.5rem;
+  }
+  
+  .yesno-question {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .yesno-btn {
+    min-width: auto;
+  }
+  
+  .question-navigation {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .step-indicators {
+    order: -1;
+  }
+  
+  .complete-actions {
+    flex-direction: column;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .feedback-summary {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .survey-header {
+    padding: var(--spacing-lg);
+  }
+  
+  .survey-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .question-card {
+    padding: var(--spacing-lg);
+  }
+  
+  .question-content h2 {
+    font-size: 1.25rem;
+  }
+  
+  .rating-stars {
+    gap: var(--spacing-xs);
+  }
+  
+  .star-btn {
+    padding: var(--spacing-xs);
+  }
+  
+  .survey-complete h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .survey-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+} 

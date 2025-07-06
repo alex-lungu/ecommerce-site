@@ -374,7 +374,8 @@
 .cta-content p {
   font-size: 1.125rem;
   margin-bottom: var(--spacing-xl);
-  opacity: 0.9;
+  color: #374151;
+  opacity: 1;
 }
 
 .cta-buttons {

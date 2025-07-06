@@ -61,19 +61,19 @@ const Footer = () => {
             <h3 className="footer-title">Categories</h3>
             <ul className="footer-links">
               <li>
-                <a href="#" className="footer-link">Smartphones</a>
+                <Link to={`/products?category=${encodeURIComponent('Smartphones')}`} className="footer-link">Smartphones</Link>
               </li>
               <li>
-                <a href="#" className="footer-link">Laptops</a>
+                <Link to={`/products?category=${encodeURIComponent('Laptops')}`} className="footer-link">Laptops</Link>
               </li>
               <li>
-                <a href="#" className="footer-link">Audio & Video</a>
+                <Link to={`/products?category=${encodeURIComponent('Audio & Video')}`} className="footer-link">Audio & Video</Link>
               </li>
               <li>
-                <a href="#" className="footer-link">Gaming</a>
+                <Link to={`/products?category=${encodeURIComponent('Gaming')}`} className="footer-link">Gaming</Link>
               </li>
               <li>
-                <a href="#" className="footer-link">Accessories</a>
+                <Link to={`/products?category=${encodeURIComponent('Tablets')}`} className="footer-link">Tablets</Link>
               </li>
             </ul>
           </div>

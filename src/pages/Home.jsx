@@ -140,22 +140,22 @@ const Home = () => {
             <p>Find exactly what you're looking for in our comprehensive selection of electronics.</p>
           </div>
           <div className="categories-grid">
-            <Link to="/products" className="category-card">
+            <Link to={`/products?category=${encodeURIComponent('Smartphones')}`} className="category-card">
               <div className="category-icon">📱</div>
               <h3>Smartphones</h3>
               <p>Latest mobile devices with cutting-edge features</p>
             </Link>
-            <Link to="/products" className="category-card">
+            <Link to={`/products?category=${encodeURIComponent('Laptops')}`} className="category-card">
               <div className="category-icon">💻</div>
               <h3>Laptops</h3>
               <p>Powerful computers for work and entertainment</p>
             </Link>
-            <Link to="/products" className="category-card">
+            <Link to={`/products?category=${encodeURIComponent('Audio & Video')}`} className="category-card">
               <div className="category-icon">🎧</div>
               <h3>Audio & Video</h3>
               <p>Premium sound and visual experiences</p>
             </Link>
-            <Link to="/products" className="category-card">
+            <Link to={`/products?category=${encodeURIComponent('Gaming')}`} className="category-card">
               <div className="category-icon">🎮</div>
               <h3>Gaming</h3>
               <p>Next-generation gaming consoles and accessories</p>

@@ -6,14 +6,19 @@ import './Products.css';
 
 const Products = ({ addToCart }) => {
   const location = useLocation();
-  // Get search term from URL query string
+  // Get search term and category from URL query string
   const getSearchFromQuery = () => {
     const params = new URLSearchParams(location.search);
     return params.get('search') || '';
   };
 
+  const getCategoryFromQuery = () => {
+    const params = new URLSearchParams(location.search);
+    return params.get('category') || '';
+  };
+
   const [searchTerm, setSearchTerm] = useState(getSearchFromQuery());
-  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [selectedCategories, setSelectedCategories] = useState(getCategoryFromQuery() ? [getCategoryFromQuery()] : []);
   const [selectedBrands, setSelectedBrands] = useState([]);
   const [selectedPriceRange, setSelectedPriceRange] = useState(null);
   const [selectedRating, setSelectedRating] = useState(null);
@@ -23,9 +28,15 @@ const Products = ({ addToCart }) => {
   const [showFilters, setShowFilters] = useState(false);
   const [filteredProducts, setFilteredProducts] = useState(products);
 
-  // Update searchTerm if URL changes
+  // Update searchTerm and selectedCategories if URL changes
   useEffect(() => {
     setSearchTerm(getSearchFromQuery());
+    const categoryFromQuery = getCategoryFromQuery();
+    if (categoryFromQuery) {
+      setSelectedCategories([categoryFromQuery]);
+    } else {
+      setSelectedCategories([]);
+    }
   }, [location.search]);
 
   // Filter products based on all selected criteria
